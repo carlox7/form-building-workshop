@@ -48,7 +48,7 @@ articleView.handleCategoryFilter = function() {
 };
 
 articleView.handleMainNav = function() {
-  $('.main-nav').on('click', '.tab', function(e) {
+  $('.main-nav').on('click', '.tab', function() {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
@@ -78,7 +78,7 @@ articleView.initNewArticlePage = function() {
   });
 
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
-  $('#new-form').on('change', articleView.create);
+  $('#new-form').on('change', 'input', 'textarea', articleView.create);
 };
 
 articleView.create = function() {
